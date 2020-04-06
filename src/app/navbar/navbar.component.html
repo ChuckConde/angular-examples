@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1 class="navbar-title" >Angular Examples</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/'"> Home </a>
+        <a mat-button [routerLink]="'/login'"> Login </a>
+        <a mat-button [routerLink]="'/register'"> Register </a>
+        <a mat-button [routerLink]="'/two-way'"> Two-way Data Binding</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>

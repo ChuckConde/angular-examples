@@ -1,1 +1,20 @@
-<p>login works!</p>
+<form class="login-form" [formGroup]="loginForm">
+    <mat-form-field class="field-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Ex. pat@example.com" formControlName="email">
+      <mat-error *ngIf="!loginForm.controls.email.valid">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="field-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="!loginForm.controls.password.valid">
+          Please enter a valid password address
+        </mat-error>
+      </mat-form-field>
+    <div class="buttons-container">
+        <button mat-raised-button (click)="reset()">Cancel</button>
+        <button mat-raised-button color="primary" (click)="submit()">Login</button>
+    </div>
+</form>

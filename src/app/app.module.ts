@@ -17,6 +17,8 @@ import { TwoWayComponent } from './two-way/two-way.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -38,9 +40,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

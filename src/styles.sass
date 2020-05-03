@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body
     background-color: #232636
+    .form-title
+        display: flex
+        justify-content: space-around
     .form
         min-width: 150px
         max-width: 500px
@@ -10,5 +13,6 @@ body
         .buttons-container
             display: flex
             justify-content: flex-end
-            :first-child
-                margin-right: 20px
+            button
+                &:first-child
+                    margin-right: 20px

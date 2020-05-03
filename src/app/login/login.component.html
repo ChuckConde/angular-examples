@@ -12,9 +12,9 @@
         <mat-label>Password</mat-label>
         <input matInput type="password" formControlName="password">
         <mat-error *ngIf="!loginForm.controls.password.valid">
-          Please enter a valid password address
+          Please enter a valid password
         </mat-error>
-      </mat-form-field>
+    </mat-form-field>
     <div class="buttons-container">
         <button mat-raised-button (click)="reset()">Cancel</button>
         <button mat-raised-button color="primary" (click)="submit()">Login</button>

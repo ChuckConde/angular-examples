@@ -1,1 +1,52 @@
-<p>register works!</p>
+<h3 class="mat-display-3 form-title">Register Form</h3>
+
+<form class="form" [formGroup]="registerForm">
+    <mat-form-field class="field-full-width">
+      <mat-label>Firstname</mat-label>
+      <input matInput placeholder="Firstname" formControlName="firstname">
+      <mat-error *ngIf="!registerForm.controls.firstname.valid">
+        Please enter a firstname
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="field-full-width">
+        <mat-label>Lastname</mat-label>
+        <input matInput placeholder="Lastname" formControlName="lastname">
+        <mat-error *ngIf="!registerForm.controls.lastname.valid">
+          Please enter a lastname
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="field-full-width">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+        <mat-error *ngIf="!registerForm.controls.dob.valid">
+            Please enter a Date of Birth
+          </mat-error>
+      </mat-form-field>
+    <mat-form-field class="field-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Ex. pat@example.com" formControlName="email">
+      <mat-error *ngIf="!registerForm.controls.email.valid">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="field-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="!registerForm.controls.password.valid">
+          Your password must have 8 characters, including a lowercase, an uppercase, a special character and a number
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="field-full-width">
+        <mat-label> Repeat Password</mat-label>
+        <input matInput type="password" formControlName="repassword">
+        <mat-error *ngIf="!registerForm.controls.repassword.valid">
+          The Passwords don't match
+        </mat-error>
+    </mat-form-field>
+    <div class="buttons-container">
+        <button mat-raised-button (click)="reset()">Cancel</button>
+        <button mat-raised-button color="primary" (click)="submit()">Login</button>
+    </div>
+</form>
